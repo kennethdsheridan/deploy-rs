@@ -3,10 +3,10 @@
 # SPDX-License-Identifier: MPL-2.0
 
 [package]
-name = "deploy-rs"
-version = "0.1.0"
-authors = ["notgne2 <gen2@gen2.space>", "Serokell <hi@serokell.io>"]
-edition = "2018"
+name = "infractl-deploy"
+version = "0.2.0-sfcompute"
+authors = ["notgne2 <gen2@gen2.space>", "Serokell <hi@serokell.io>", "SF Compute <hi@sfcompute.com>"]
+edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -29,6 +29,11 @@ toml = "0.8"
 whoami = "1.6"
 yn = "0.1"
 rpassword = "7.3.1"
+
+# SF Compute Infrastructure Extensions
+reqwest = { version = "0.11", features = ["json"] }
+base64 = "0.21"
+chrono = { version = "0.4", features = ["serde"] }
 
 
 [lib]

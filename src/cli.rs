@@ -97,6 +97,23 @@ pub struct Opts {
     /// Show what will be activated on the machines
     #[arg(long)]
     dry_activate: bool,
+
+    // SF Compute Infrastructure Options
+    /// Enable SF Compute infrastructure features (Doppler, Tailscale OAuth)
+    #[arg(long)]
+    sfcompute_mode: bool,
+    /// Doppler project to use for secrets
+    #[arg(long, default_value = "metal-boot")]
+    doppler_project: String,
+    /// Doppler config to use
+    #[arg(long, default_value = "prd")]
+    doppler_config: String,
+    /// Tailscale tags to apply to deployed nodes (comma-separated)
+    #[arg(long, default_value = "tag:infractl")]
+    tailscale_tags: String,
+    /// Disable infrastructure telemetry
+    #[arg(long)]
+    no_telemetry: bool,
     /// Don't activate, but update the boot loader to boot into the new profile
     #[arg(long)]
     boot: bool,
